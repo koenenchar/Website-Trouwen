@@ -1,40 +1,89 @@
+/* Standaard instellingen */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-main {
-    padding: 1rem;
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-section h2 {
+    box-sizing: border-box;
     color: #333;
+    background: url('img/background.jpg') no-repeat center center fixed; /* Achtergrondafbeelding met correct pad */
+    background-size: cover; /* Zorgt ervoor dat de afbeelding de hele achtergrond bedekt */
 }
 
-footer {
-    background-color: #333;
-    color: white;
+/* Header stijlen */
+header {
+    background-color: rgba(255, 255, 255, 0.8); /* Lichtgrijze achtergrond met transparantie */
+    padding: 1rem;
     text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1; /* Zorg ervoor dat de header boven de achtergrondafbeelding staat */
 }
+
+/* Navigatie stijlen */
+nav {
+    background-color: rgba(255, 255, 255, 0.8); /* Witte achtergrond met transparantie */
+    padding: 0.5rem 0;
+    position: relative;
+    z-index: 1; /* Zorg ervoor dat de navigatie boven de achtergrondafbeelding staat */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #007bff; /* Blauwe kleur voor de links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main content stijlen */
+main {
+    position: relative;
+    padding: 2rem;
+}
+
+/* Overlay voor leesbaarheid */
+.content-overlay {
+    background: rgba(255, 255, 255, 0.8); /* Witte overlay met transparantie */
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 8px;
+}
+
+/* Footer stijlen */
+footer {
+    background-color: rgba(255, 255, 255, 0.8); /* Lichtgrijze achtergrond met transparantie */
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Zorg ervoor dat de footer boven de achtergrondafbeelding staat */
+}
+
+/* Voeg dit toe aan je styles.css */
+.dresscode-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Ruimte tussen de afbeeldingen */
+    margin-top: 20px; /* Ruimte boven de afbeeldingen */
+}
+
+.dresscode-image {
+    max-width: 45%; /* Zorgt ervoor dat de afbeeldingen niet groter worden dan 45% van de breedte van de container */
+    height: auto;
+    border: 1px solid #ddd; /* Optioneel: voeg een lichte rand toe aan de afbeeldingen */
+}
+
