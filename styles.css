@@ -1,30 +1,54 @@
+/* Lettertype-instellingen */
+@font-face {
+    font-family: 'Kuenstler Script';
+    src: url('fonts/KuenstlerScript.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Standaard instellingen */
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%; /* Zorg ervoor dat de hoogte van html en body 100% is */
     margin: 0;
-    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif; /* Gebruik Tahoma als primair lettertype */
+    font-size: 16px; /* Pas aan op basis van je voorkeur */
+    line-height: 1.8;
     box-sizing: border-box;
     color: #333;
-    background: url('img/background.jpg') no-repeat center center fixed; /* Achtergrondafbeelding met correct pad */
-    background-size: cover; /* Zorgt ervoor dat de afbeelding de hele achtergrond bedekt */
+    background: url('img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 /* Header stijlen */
 header {
-    background-color: rgba(255, 255, 255, 0.8); /* Lichtgrijze achtergrond met transparantie */
+    background-color: rgba(96, 113, 97, 0.8); /* Achtergrondkleur met transparantie */
     padding: 1rem;
     text-align: center;
     margin-bottom: 0;
     position: relative;
-    z-index: 1; /* Zorg ervoor dat de header boven de achtergrondafbeelding staat */
+    z-index: 1;
+}
+
+.header-title {
+    font-family: 'Kuenstler Script', cursive; /* Swirly lettertype voor de naam */
+    font-size: 6rem; /* Grote tekst voor desktop */
+    color: #fff; /* Witte tekstkleur */
+    margin: 0;
+    font-weight: normal; /* Zorg ervoor dat de tekst niet vetgedrukt is */
 }
 
 /* Navigatie stijlen */
 nav {
-    background-color: rgba(255, 255, 255, 0.8); /* Witte achtergrond met transparantie */
+    background-color: rgba(96, 113, 97, 0.8); /* Achtergrondkleur met transparantie */
     padding: 0.5rem 0;
     position: relative;
-    z-index: 1; /* Zorg ervoor dat de navigatie boven de achtergrondafbeelding staat */
+    z-index: 1;
+    
 }
 
 nav ul {
@@ -33,6 +57,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -40,24 +65,28 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #007bff; /* Blauwe kleur voor de links */
+    color: #fff; /* Witte tekstkleur */
     text-decoration: none;
-    font-weight: bold;
+    font-weight: normal;
+    padding: 0.5rem 1rem;
+    border-radius: 5px; /* Ronde hoeken voor knoppen */
+    transition: color 0.3s; /* Vloeiende overgang voor kleurverandering */
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #004d40; /* Donkergroene tekstkleur bij hover */
 }
 
 /* Main content stijlen */
 main {
+    flex: 1; /* Zorg ervoor dat main de resterende ruimte opvult */
     position: relative;
     padding: 2rem;
 }
 
 /* Overlay voor leesbaarheid */
 .content-overlay {
-    background: rgba(255, 255, 255, 0.8); /* Witte overlay met transparantie */
+    background: rgba(255, 255, 255, 0.8);
     padding: 2rem;
     margin: 2rem auto;
     max-width: 800px;
@@ -66,24 +95,91 @@ main {
 
 /* Footer stijlen */
 footer {
-    background-color: rgba(255, 255, 255, 0.8); /* Lichtgrijze achtergrond met transparantie */
+    background-color: rgba(96, 113, 97, 0.8);
     padding: 1rem;
     text-align: center;
     position: relative;
-    z-index: 1; /* Zorg ervoor dat de footer boven de achtergrondafbeelding staat */
+    z-index: 1;
 }
 
-/* Voeg dit toe aan je styles.css */
+/* Dresscode afbeeldingen */
 .dresscode-images {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Ruimte tussen de afbeeldingen */
-    margin-top: 20px; /* Ruimte boven de afbeeldingen */
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .dresscode-image {
-    max-width: 45%; /* Zorgt ervoor dat de afbeeldingen niet groter worden dan 45% van de breedte van de container */
+    max-width: 45%;
     height: auto;
-    border: 1px solid #ddd; /* Optioneel: voeg een lichte rand toe aan de afbeeldingen */
+    border: 1px solid #ddd;
 }
 
+/* Mobiele apparaten */
+@media (max-width: 768px) {
+    header, footer, nav {
+        padding: 1rem;
+    }
+
+    .header-title {
+        font-size: 4rem; /* Verlaag de grootte van de tekst op kleinere schermen */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .content-overlay {
+        padding: 1rem;
+        margin: 1rem;
+        max-width: 100%;
+    }
+
+    .dresscode-images {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dresscode-image {
+        max-width: 100%;
+    }
+}
+
+/* Extra kleine schermen zoals mobiele telefoons in portretmodus */
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 2.5rem; /* Verlaag de grootte van de tekst op zeer kleine schermen */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dresscode-images {
+        gap: 5px;
+    }
+}
+
+.rsvp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* RSVP-pagina iframe */
+.rsvp-iframe {
+    width: 150%;
+    max-width: 600px;
+    height: 80vh;
+    border: none;
+    transform: scale(1);
+    transform-origin: top left;
+}
